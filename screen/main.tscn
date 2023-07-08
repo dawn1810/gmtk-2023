@@ -52,9 +52,6 @@ collision_mask = 7
 input_pickable = true
 script = ExtResource("4_v142w")
 
-[node name="trap" parent="not a trap" instance=ExtResource("3_tdocg")]
-visible = false
-
 [node name="Sprite2D" type="Sprite2D" parent="not a trap"]
 texture = ExtResource("5_s0pkr")
 
