@@ -44,7 +44,7 @@ _data = {
 "idle": SubResource("Animation_3jecg")
 }
 
-[node name="Character" type="CharacterBody2D"]
+[node name="Actor" type="CharacterBody2D"]
 position = Vector2(0, 400)
 collision_mask = 6
 script = ExtResource("1_whjdw")
@@ -60,7 +60,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_0jvp1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -400)
+position = Vector2(381, -538)
 offset = Vector2(50, 350)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
