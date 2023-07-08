@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bqfiyavbp1v8a" path="res://img/png-transparent-plants-vs-zombies-2-it-s-about-time-plants-vs-zombies-garden-warfare-2-english-walnut-popcap-games-plants-vs-zombies-food-video-game-smiley.webp" id="5_s0pkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84r2w"]
-size = Vector2(1194, 18)
+size = Vector2(1614, 95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dna5j"]
 size = Vector2(49.375, 9)
@@ -23,31 +23,21 @@ size = Vector2(151, 145)
 position = Vector2(-1, 0)
 
 [node name="gound" type="StaticBody2D" parent="."]
+position = Vector2(363, 539)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gound"]
-position = Vector2(572, 489)
-shape = SubResource("RectangleShape2D_84r2w")
-
-[node name="gound3" type="StaticBody2D" parent="."]
-position = Vector2(1323, -1)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gound3"]
-position = Vector2(572, 489)
 shape = SubResource("RectangleShape2D_84r2w")
 
 [node name="gound2" type="StaticBody2D" parent="."]
-position = Vector2(99, -254)
+position = Vector2(1065, 128)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gound2"]
-position = Vector2(998, 451)
 scale = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_dna5j")
 
 [node name="Sprite2D" type="Sprite2D" parent="gound2"]
-position = Vector2(998.5, 450.632)
 scale = Vector2(1.22531, 0.254319)
 texture = ExtResource("1_4oriw")
 
@@ -57,26 +47,18 @@ position = Vector2(362, 186)
 scale = Vector2(3.374, 3.374)
 texture = ExtResource("1_ikwc1")
 
-[node name="bg2" type="Sprite2D" parent="."]
-z_index = -999
-position = Vector2(2110, 179)
-scale = Vector2(3.374, 3.374)
-texture = ExtResource("1_ikwc1")
-
 [node name="drop trap" type="RigidBody2D" parent="."]
-position = Vector2(701, -212)
+position = Vector2(843, -39)
 collision_layer = 4
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="drop trap"]
-position = Vector2(327, 146)
 shape = SubResource("CircleShape2D_i6dwv")
 
 [node name="trap" parent="drop trap" instance=ExtResource("3_tdocg")]
-position = Vector2(326, 157)
 
 [node name="not a trap" type="RigidBody2D" parent="."]
-position = Vector2(922, 234)
+position = Vector2(400, 164)
 collision_layer = 4
 collision_mask = 7
 input_pickable = true
@@ -84,17 +66,14 @@ script = ExtResource("4_yhc5e")
 
 [node name="trap" parent="not a trap" instance=ExtResource("3_tdocg")]
 visible = false
-position = Vector2(329, 133)
 
 [node name="Sprite2D" type="Sprite2D" parent="not a trap"]
-position = Vector2(326, 145)
-scale = Vector2(1.31667, 1.31667)
 texture = ExtResource("5_s0pkr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="not a trap"]
-position = Vector2(327.5, 153.5)
 shape = SubResource("RectangleShape2D_5dce5")
 
 [node name="Character" parent="." instance=ExtResource("2_d1b8j")]
+position = Vector2(79, 275)
 
 [connection signal="body_entered" from="drop trap/trap" to="Character" method="_on_trap_body_entered"]
