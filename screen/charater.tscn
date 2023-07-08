@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://yqqwp01yfbxl"]
+
+[ext_resource type="Script" path="res://code/Character.gd" id="1_whjdw"]
+[ext_resource type="Texture2D" uid="uid://v3so52lgasfp" path="res://img/3914692.512.webp" id="2_0jvp1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lptcv"]
+size = Vector2(24.3284, 26.2687)
+
+[sub_resource type="Animation" id="Animation_2ahti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.4, 0.4)]
+}
+
+[sub_resource type="Animation" id="Animation_3jecg"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(0.5, 0.3), Vector2(0.4, 0.4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4u11o"]
+_data = {
+"RESET": SubResource("Animation_2ahti"),
+"idle": SubResource("Animation_3jecg")
+}
+
+[node name="Character" type="CharacterBody2D"]
+position = Vector2(0, 400)
+collision_mask = 6
+script = ExtResource("1_whjdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 4)
+scale = Vector2(6.7, 6.7)
+shape = SubResource("RectangleShape2D_lptcv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, 2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_0jvp1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -400)
+offset = Vector2(50, 350)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4u11o")
+}
