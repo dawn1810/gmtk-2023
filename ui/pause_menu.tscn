@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://nmjink44ntmf"]
+[gd_scene load_steps=3 format=3 uid="uid://nmjink44ntmf"]
 
 [ext_resource type="Script" path="res://ui/menu.gd" id="1_a5xk7"]
 [ext_resource type="Theme" uid="uid://cje4s55txuuax" path="res://themes/gui_theme.tres" id="1_u3e2m"]
-[ext_resource type="PackedScene" uid="uid://c3rvo2vmi52h6" path="res://ui/audio_setting_menu.tscn" id="3_sbyvy"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_a5xk7")
@@ -45,8 +44,6 @@ text = "SETTING"
 layout_mode = 2
 theme = ExtResource("1_u3e2m")
 text = "QUIT"
-
-[node name="SettingMenu" parent="." instance=ExtResource("3_sbyvy")]
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]

@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq58hwn83p6k5"]
+
+[ext_resource type="Theme" uid="uid://cje4s55txuuax" path="res://themes/gui_theme.tres" id="1_cwbmi"]
+[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_qrjmb"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_qrjmb")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme = ExtResource("1_cwbmi")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "TEN GAME LEN TREN NAY"
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_cwbmi")
+text = "Play"
+
+[node name="SettingButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_cwbmi")
+text = "Setting
+"
+
+[node name="CreditButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -46.0
+offset_right = 257.0
+offset_bottom = -14.0
+grow_vertical = 0
+theme = ExtResource("1_cwbmi")
+text = "An submission to GMTK 2023"
+
+[node name="CreditMenu" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.0
+offset_top = -232.0
+offset_right = 297.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.914063, 0.828125, 0.664063, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="CreditMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cwbmi")
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditMenu/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditMenu/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.14902, 0.14902, 0.14902, 1)
+bbcode_enabled = true
+text = "A submission to GMTK Jam 2023.
+
+Made by:
+- ten1 CODE
+- ten2
+- ten 3
+- ten 4
+- sakojirose3 CUSTOM ART
+
+3rd-party assets used:
+- m3x6 font by Daniel Linssen
+- Cryo's Mini GUI by PaperHatLizard
+
+[center]Thank you[/center]"
+
+[node name="CloseTxt" type="Label" parent="CreditMenu"]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 22.0
+offset_right = 553.0
+offset_bottom = 54.0
+mouse_filter = 1
+theme = ExtResource("1_cwbmi")
+text = "close"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="gui_input" from="CreditMenu/CloseTxt" to="." method="_on_close_txt_gui_input"]

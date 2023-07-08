@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://ui/AudioSliderScript.gd" id="2_8olfc"]
 
 [node name="SettingMenu" type="CanvasLayer"]
+layer = 10
 script = ExtResource("1_gcj1h")
 
 [node name="SettingBG" type="ColorRect" parent="."]

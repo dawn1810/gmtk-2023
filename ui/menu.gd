@@ -12,16 +12,12 @@ func _unhandled_key_input(event):
         get_tree().paused = true
 
 func _on_setting_button_pressed():
-    $SettingMenu.show()
+    AudioSettingUI.show()
 
 func _on_continue_button_pressed():
     get_tree().paused = false
     $MainMenu.release_focus()
-    $SettingMenu/SettingBG.release_focus()
     hide()
 
-func _on_close_setting_button_pressed():
-    $SettingMenu.hide()
-    
 func _on_quit_button_pressed():
     get_tree().quit()
