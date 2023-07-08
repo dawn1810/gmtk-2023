@@ -27,8 +27,7 @@ collision_layer = 2
 shape = SubResource("RectangleShape2D_84r2w")
 
 [node name="gound2" type="StaticBody2D" parent="."]
-position = Vector2(1107, 323)
-rotation = -0.814416
+position = Vector2(94, 630)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gound2"]
