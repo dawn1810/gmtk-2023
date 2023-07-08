@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ohkbukxi5y7r"]
+
+[ext_resource type="PackedScene" uid="uid://2d37fsojmbxx" path="res://screen/Traps/Trap.tscn" id="1_4gjxv"]
+[ext_resource type="Texture2D" uid="uid://bbwfraxn4bvse" path="res://img/934893.512.webp" id="2_t5gmt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rm3qt"]
+radius = 107.378
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fugbl"]
+radius = 125.766
+
+[node name="DropTrap" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rm3qt")
+
+[node name="Trap" parent="." instance=ExtResource("1_4gjxv")]
+
+[node name="Sprite2D" parent="Trap" index="0"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_t5gmt")
+
+[node name="CollisionShape2D" parent="Trap" index="1"]
+shape = SubResource("CircleShape2D_fugbl")
+
+[editable path="Trap"]
