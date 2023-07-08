@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://DragPreview.gd" id="1_vvhqj"]
 
 [node name="DragPreview" type="Sprite2D"]
+z_index = 100
 script = ExtResource("1_vvhqj")

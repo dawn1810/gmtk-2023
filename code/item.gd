@@ -4,6 +4,7 @@ const DRAGPREVIEW = preload("res://screen/drag_preview.tscn")
 
 var lable: String
 var droped_on_target: bool = false
+@export var item_name : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,6 +21,8 @@ func _get_drag_data(at_position):
 	
 	var dragPrieview = DRAGPREVIEW.instantiate()
 	dragPrieview.texture = texture_normal
+	Global.current_item = self.item_name
+	#dragPrieview.item_name = self.item_name
 	add_child(dragPrieview)
 	
 	return data
