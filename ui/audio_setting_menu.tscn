@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3rvo2vmi52h6"]
+
+[ext_resource type="Script" path="res://ui/audio_setting_menu.gd" id="1_gcj1h"]
+[ext_resource type="Theme" uid="uid://cje4s55txuuax" path="res://themes/gui_theme.tres" id="1_mqfx2"]
+[ext_resource type="Script" path="res://ui/AudioSliderScript.gd" id="2_8olfc"]
+
+[node name="SettingMenu" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_gcj1h")
+
+[node name="SettingBG" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -185.0
+offset_right = 179.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.917647, 0.831373, 0.666667, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="SettingBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mqfx2")
+
+[node name="Center" type="CenterContainer" parent="SettingBG/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingBG/PanelContainer/Center"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="SettingBG/PanelContainer/Center/VBoxContainer"]
+layout_mode = 2
+text = "Audio setting"
+
+[node name="GridContainer" type="GridContainer" parent="SettingBG/PanelContainer/Center/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="SettingBG/PanelContainer/Center/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "MASTER"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="SettingBG/PanelContainer/Center/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.02
+script = ExtResource("2_8olfc")
+
+[node name="MusicVolumeLabel" type="Label" parent="SettingBG/PanelContainer/Center/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_mqfx2")
+text = "MUSIC"
+
+[node name="MusicVolumeLabel2" type="HSlider" parent="SettingBG/PanelContainer/Center/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.02
+value = 1.0
+script = ExtResource("2_8olfc")
+audio_bus_name = "Music"
+
+[node name="SFXVolumeLabel" type="Label" parent="SettingBG/PanelContainer/Center/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_mqfx2")
+text = "SFX"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="SettingBG/PanelContainer/Center/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.02
+value = 1.0
+script = ExtResource("2_8olfc")
+audio_bus_name = "SFX"
+
+[node name="CloseSettingButton" type="Button" parent="SettingBG/PanelContainer/Center/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "close"
+
+[connection signal="pressed" from="SettingBG/PanelContainer/Center/VBoxContainer/CloseSettingButton" to="." method="_on_close_setting_button_pressed"]
