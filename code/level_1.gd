@@ -7,8 +7,8 @@ func _ready():
 	$GameOver.hide()
 
 func _on_destroy_item_explore():
-	$Camera.speed = 100
-	$Actor.speed = 100
+	$Camera.speed = 180
+	$Actor.speed = 180
 	var pop_cat = POP_CAT.instantiate() 
 	pop_cat.global_position = $Hourse.global_position
 	add_child(pop_cat)
