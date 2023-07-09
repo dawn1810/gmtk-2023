@@ -6,4 +6,5 @@ func _ready():
 	hide()
 
 func _on_close_setting_button_pressed():
+	AudioManager.play_click()
 	hide()

@@ -7,6 +7,7 @@ extends HSlider
 func _ready() -> void:
 	connect("value_changed", _on_value_changed)
 	connect("mouse_exited", _on_mouse_exited)
+	connect("drag_ended", _drag_ended)
 	value = db_to_linear((AudioServer.get_bus_volume_db(_bus)))
 
 func _on_value_changed(value: float) -> void:
@@ -14,3 +15,6 @@ func _on_value_changed(value: float) -> void:
 
 func _on_mouse_exited():
 	release_focus()
+
+func _drag_ended(value_changed: bool):
+	AudioManager.play_click()

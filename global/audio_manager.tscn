@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdpsdvc4fnqwd"]
+
+[ext_resource type="Script" path="res://global/AudioManager.gd" id="1_qemhe"]
+[ext_resource type="AudioStream" uid="uid://bop77tw5q3wtq" path="res://assets/bgm/Funky_droll_street.mp3" id="2_t6vha"]
+[ext_resource type="AudioStream" uid="uid://du0prwwgqtrky" path="res://assets/sfx/click.mp3" id="3_v82uc"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_qemhe")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_t6vha")
+autoplay = true
+bus = &"Music"
+area_mask = 0
+
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_v82uc")
+bus = &"SFX"
