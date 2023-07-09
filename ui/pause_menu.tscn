@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://cje4s55txuuax" path="res://themes/gui_theme.tres" id="1_u3e2m"]
 
 [node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_a5xk7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -35,16 +36,16 @@ layout_mode = 2
 theme = ExtResource("1_u3e2m")
 text = "CONTINUE"
 
+[node name="Retry" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_u3e2m")
+text = "Retry"
+
 [node name="SettingButton" type="Button" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_u3e2m")
 text = "SETTING"
 
-[node name="QuitButton" type="Button" parent="MainMenu/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_u3e2m")
-text = "QUIT"
-
 [connection signal="pressed" from="MainMenu/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Retry" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

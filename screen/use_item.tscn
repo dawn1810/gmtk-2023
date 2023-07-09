@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://code/use_item.gd" id="1_afiro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6h3l"]
-size = Vector2(202, 64)
+size = Vector2(202, 142)
 
 [node name="Use_item" type="Area2D"]
 position = Vector2(1287, 532)

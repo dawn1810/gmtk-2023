@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bhfknoq3m5y6b" path="res://img/background.png" id="2_jityj"]
 
 [node name="MainMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_qrjmb")
 start_level = "res://screen/level_1.tscn"
 
@@ -65,10 +66,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -297.0
-offset_top = -232.0
-offset_right = 297.0
-offset_bottom = 232.0
+offset_left = -220.0
+offset_top = -197.0
+offset_right = 220.0
+offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.914063, 0.828125, 0.664063, 1)
@@ -105,11 +106,15 @@ Music and SFX:
 [center]Thank you![/center]"
 
 [node name="CloseTxt" type="Label" parent="CreditMenu"]
-layout_mode = 0
-offset_left = 510.0
-offset_top = 22.0
-offset_right = 553.0
-offset_bottom = 54.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -69.0
+offset_top = 16.0
+offset_right = -26.0
+offset_bottom = 48.0
+grow_horizontal = 0
 mouse_filter = 1
 theme = ExtResource("1_cwbmi")
 text = "close"
