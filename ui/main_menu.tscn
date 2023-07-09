@@ -60,7 +60,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "A submission to GMTK 2023"
 
 [node name="CreditMenu" type="ColorRect" parent="."]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -94,13 +93,6 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0.14902, 0.14902, 0.14902, 1)
 bbcode_enabled = true
 text = "A submission to GMTK Jam 2023.
-
-Made by:
-- ten1 CODE
-- ten2
-- ten 3
-- ten 4
-- ten 5 CUSTOM ART
 
 3rd-party assets used:
 - m3x6 font by Daniel Linssen
