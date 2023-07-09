@@ -5,6 +5,7 @@
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_qrjmb")
+start_level = "res://screen/level_1.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15

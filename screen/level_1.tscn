@@ -23,6 +23,8 @@ size = Vector2(61.9048, 17.8572)
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -128
+scale = Vector2(1.99, 1.99)
+transform = Transform2D(1.99, 0, 0, 1.99, 0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 scale = Vector2(1.35, 1.35)
@@ -36,6 +38,8 @@ text = "Score: 0"
 
 [node name="FrontLayer" type="CanvasLayer" parent="."]
 layer = 128
+scale = Vector2(1.99, 1.99)
+transform = Transform2D(1.99, 0, 0, 1.99, 0, 0)
 
 [node name="Inventory" parent="FrontLayer" instance=ExtResource("1_iv6vx")]
 position = Vector2(200, 10)
@@ -73,7 +77,6 @@ frame = 1
 
 [node name="CollisionShape2D" parent="wood" index="1"]
 position = Vector2(1.19043, 6.54745)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lat2k")
 
 [node name="Actor" parent="." instance=ExtResource("3_a4fhu")]
@@ -81,6 +84,7 @@ position = Vector2(276, 217)
 
 [node name="Camera" parent="." instance=ExtResource("4_1fli5")]
 position = Vector2(289, 162)
+zoom = Vector2(2, 2)
 
 [editable path="FrontLayer/Inventory"]
 [editable path="DropTrap"]

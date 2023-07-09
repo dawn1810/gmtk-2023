@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-
+@export_file var start_level
 
 func _on_setting_button_pressed():
 	AudioManager.play_click()
@@ -18,4 +18,4 @@ func _on_credit_button_pressed():
 
 
 func _on_play_button_button_down():
-	get_tree().change_scene_to_file("res://screen/main.tscn")
+	get_tree().change_scene_to_file(start_level)
