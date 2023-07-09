@@ -3,11 +3,12 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	hide()
 	get_tree().paused = false
 	pass
 
 func _unhandled_key_input(event):
-	if Input.is_action_just_pressed("paused"):
+	if Input.is_action_just_pressed("pause"):
 		show()
 		get_tree().paused = true
 
