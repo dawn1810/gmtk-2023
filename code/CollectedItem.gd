@@ -11,7 +11,8 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released("LeftMouse") && mouse_inside_area:
 		get_parent().get_node('FrontLayer/Inventory/Control/HBoxContainer/CenterContainer/Item').texture_normal = load(read_json_file('res://code/item.json')[item_name])
-
+		queue_free()
+	
 func read_json_file(file_path):
 	var json_as_text = FileAccess.get_file_as_string(file_path)
 	var json_as_dict = JSON.parse_string(json_as_text)

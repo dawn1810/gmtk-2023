@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dtfuccmj7rtec" path="res://img/minhdz3.png" id="10_2efiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk7y8"]
-size = Vector2(1294, 41)
+size = Vector2(1294, 81)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yyu2k"]
 radius = 37.1214
@@ -45,27 +45,31 @@ transform = Transform2D(1.99, 0, 0, 1.99, 0, 0)
 position = Vector2(200, 10)
 
 [node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(0, 284)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(647, 303.5)
+position = Vector2(647, 320.5)
 shape = SubResource("RectangleShape2D_mk7y8")
 
 [node name="DropTrap" parent="." instance=ExtResource("9_4t2n5")]
-position = Vector2(430, 140)
+position = Vector2(711, 221)
+mass = 2.0
+inertia = 0.1
 
 [node name="CollisionShape2D" parent="DropTrap" index="0"]
 shape = SubResource("CircleShape2D_yyu2k")
 
 [node name="Sprite2D" parent="DropTrap" index="1"]
+scale = Vector2(2, 2)
 texture = ExtResource("10_2efiw")
 
 [node name="PopCat" parent="." instance=ExtResource("3_8aarr")]
-position = Vector2(58, 99)
+position = Vector2(117, 360)
 
 [node name="wood" parent="." instance=ExtResource("7_55xhb")]
-position = Vector2(218, 269)
-scale = Vector2(0.84, 0.84)
+position = Vector2(1000, 531)
+scale = Vector2(2, 2)
 item_name = "wood"
 number = 1
 
@@ -80,12 +84,21 @@ position = Vector2(1.19043, 6.54745)
 shape = SubResource("RectangleShape2D_lat2k")
 
 [node name="Actor" parent="." instance=ExtResource("3_a4fhu")]
-position = Vector2(276, 217)
+position = Vector2(404, 383)
+collision_mask = 14
+SPEED = 2
+
+[node name="CollisionShape2D" parent="Actor" index="0"]
+position = Vector2(0, 6)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" parent="Actor" index="1"]
+scale = Vector2(2, 2)
 
 [node name="Camera" parent="." instance=ExtResource("4_1fli5")]
-position = Vector2(289, 162)
-zoom = Vector2(2, 2)
+position = Vector2(581, 321)
 
 [editable path="FrontLayer/Inventory"]
 [editable path="DropTrap"]
 [editable path="wood"]
+[editable path="Actor"]

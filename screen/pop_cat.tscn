@@ -51,6 +51,7 @@ _data = {
 size = Vector2(73, 104)
 
 [node name="PopCat" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_t5s4j")

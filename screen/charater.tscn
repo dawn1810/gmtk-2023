@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dnarjtxod53sa" path="res://img/player-Sheet.png" id="2_fewbx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lq8ks"]
-radius = 3.43284
-height = 8.27612
+radius = 2.68657
+height = 6.48508
 
 [sub_resource type="Animation" id="Animation_4dc77"]
 length = 0.001
@@ -81,7 +81,7 @@ _data = {
 "scroll": SubResource("Animation_splay")
 }
 
-[node name="Actor" type="CharacterBody2D"]
+[node name="Actor" type="RigidBody2D"]
 collision_mask = 6
 script = ExtResource("1_whjdw")
 
