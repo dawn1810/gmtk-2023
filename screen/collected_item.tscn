@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmelk81uklx0f"]
+
+[ext_resource type="Script" path="res://code/CollectedItem.gd" id="1_xdxgs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_soil2"]
+size = Vector2(155, 45)
+
+[node name="CollectedItem" type="Area2D"]
+position = Vector2(482, 524)
+script = ExtResource("1_xdxgs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 17.5)
+shape = SubResource("RectangleShape2D_soil2")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

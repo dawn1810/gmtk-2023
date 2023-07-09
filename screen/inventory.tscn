@@ -1,14 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cb3pnm686tull"]
+[gd_scene load_steps=4 format=3 uid="uid://cb3pnm686tull"]
 
-[ext_resource type="Texture2D" uid="uid://dif3gaebpalgl" path="res://img/pixil-frame.png" id="1_f8j0i"]
+[ext_resource type="Script" path="res://code/inventory.gd" id="1_4aabr"]
 [ext_resource type="PackedScene" uid="uid://wggrkym3w0t5" path="res://screen/item.tscn" id="1_jsm7m"]
-[ext_resource type="Texture2D" uid="uid://blagqipj0tqug" path="res://img/minhdz1.png" id="3_o5sfo"]
-[ext_resource type="Texture2D" uid="uid://v3guxl2j3tmj" path="res://img/minhdz2.png" id="4_1u7yg"]
-[ext_resource type="Texture2D" uid="uid://dtfuccmj7rtec" path="res://img/minhdz3.png" id="5_gffcn"]
-[ext_resource type="Texture2D" uid="uid://dmc8maof2jcen" path="res://img/minhdz4.png" id="6_vcwub"]
-[ext_resource type="Texture2D" uid="uid://bbpcpy7by8pw7" path="res://img/minhdz5.png" id="7_nt350"]
+[ext_resource type="Texture2D" uid="uid://cu1khga0j6jej" path="res://img/inventoryBox.png" id="2_smpda"]
 
 [node name="Inventory" type="Node2D"]
+script = ExtResource("1_4aabr")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -18,56 +15,60 @@ offset_bottom = 40.0
 
 [node name="Background" type="HBoxContainer" parent="Control"]
 layout_mode = 0
-offset_right = 336.0
-offset_bottom = 64.0
+offset_right = 176.0
+offset_bottom = 32.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Control/Background"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/Background/CenterContainer"]
 layout_mode = 2
-texture = ExtResource("1_f8j0i")
+texture = ExtResource("2_smpda")
+stretch_mode = 2
 
 [node name="CenterContainer2" type="CenterContainer" parent="Control/Background"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/Background/CenterContainer2"]
 layout_mode = 2
-texture = ExtResource("1_f8j0i")
+texture = ExtResource("2_smpda")
+stretch_mode = 2
 
 [node name="CenterContainer3" type="CenterContainer" parent="Control/Background"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/Background/CenterContainer3"]
 layout_mode = 2
-texture = ExtResource("1_f8j0i")
+texture = ExtResource("2_smpda")
+stretch_mode = 2
 
 [node name="CenterContainer4" type="CenterContainer" parent="Control/Background"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/Background/CenterContainer4"]
 layout_mode = 2
-texture = ExtResource("1_f8j0i")
+texture = ExtResource("2_smpda")
+stretch_mode = 2
 
 [node name="CenterContainer5" type="CenterContainer" parent="Control/Background"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/Background/CenterContainer5"]
 layout_mode = 2
-texture = ExtResource("1_f8j0i")
+texture = ExtResource("2_smpda")
+stretch_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 176.0
+offset_bottom = 32.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Control/HBoxContainer"]
 layout_mode = 2
 
 [node name="Item" parent="Control/HBoxContainer/CenterContainer" instance=ExtResource("1_jsm7m")]
 layout_mode = 2
-texture_normal = ExtResource("3_o5sfo")
-texture_pressed = ExtResource("3_o5sfo")
+texture_normal = ExtResource("2_smpda")
 item_name = "dao_mo"
 
 [node name="CenterContainer2" type="CenterContainer" parent="Control/HBoxContainer"]
@@ -75,8 +76,7 @@ layout_mode = 2
 
 [node name="Item" parent="Control/HBoxContainer/CenterContainer2" instance=ExtResource("1_jsm7m")]
 layout_mode = 2
-texture_normal = ExtResource("4_1u7yg")
-texture_pressed = ExtResource("4_1u7yg")
+texture_normal = ExtResource("2_smpda")
 item_name = "mo_coi"
 
 [node name="CenterContainer3" type="CenterContainer" parent="Control/HBoxContainer"]
@@ -84,8 +84,7 @@ layout_mode = 2
 
 [node name="Item" parent="Control/HBoxContainer/CenterContainer3" instance=ExtResource("1_jsm7m")]
 layout_mode = 2
-texture_normal = ExtResource("5_gffcn")
-texture_pressed = ExtResource("5_gffcn")
+texture_normal = ExtResource("2_smpda")
 item_name = "haha"
 
 [node name="CenterContainer4" type="CenterContainer" parent="Control/HBoxContainer"]
@@ -93,8 +92,7 @@ layout_mode = 2
 
 [node name="Item" parent="Control/HBoxContainer/CenterContainer4" instance=ExtResource("1_jsm7m")]
 layout_mode = 2
-texture_normal = ExtResource("6_vcwub")
-texture_pressed = ExtResource("6_vcwub")
+texture_normal = ExtResource("2_smpda")
 item_name = "ca_heo"
 
 [node name="CenterContainer5" type="CenterContainer" parent="Control/HBoxContainer"]
@@ -102,6 +100,5 @@ layout_mode = 2
 
 [node name="Item" parent="Control/HBoxContainer/CenterContainer5" instance=ExtResource("1_jsm7m")]
 layout_mode = 2
-texture_normal = ExtResource("7_nt350")
-texture_pressed = ExtResource("7_nt350")
+texture_normal = ExtResource("2_smpda")
 item_name = "toc_do"
