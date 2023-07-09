@@ -18,3 +18,4 @@ func _on_destroy_item_explore():
 	var pop_cat = POP_CAT.instantiate() 
 	pop_cat.global_position = $Hourse.global_position
 	add_child(pop_cat)
+	pop_cat.speed = 100
