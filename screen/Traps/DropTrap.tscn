@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ohkbukxi5y7r"]
+[gd_scene load_steps=3 format=3 uid="uid://ohkbukxi5y7r"]
+
+[ext_resource type="PackedScene" uid="uid://xv23mfq7leuy" path="res://screen/destroy_item.tscn" id="1_ujyf3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rm3qt"]
 radius = 107.378
@@ -11,4 +13,6 @@ collision_mask = 7
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_rm3qt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="DestroyItem" parent="." instance=ExtResource("1_ujyf3")]
+
+[editable path="DestroyItem"]

@@ -12,10 +12,12 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released("RightMouse") && mouse_inside_area:
 		durability -= 1
-		print(durability)
 		$AnimationPlayer.play("idle")
 		if (durability <= 0) : 
-			get_parent().queue_free()
+			if get_parent().name == 'Actor':
+				get_parent().dead()
+			else :
+				get_parent().queue_free()
 			emit_signal('explore')
 	
 func read_json_file(file_path):

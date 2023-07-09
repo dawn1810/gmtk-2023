@@ -1,22 +1,24 @@
-[gd_scene load_steps=28 format=3 uid="uid://b0w5i3xotrg0k"]
+[gd_scene load_steps=35 format=3 uid="uid://b0w5i3xotrg0k"]
 
 [ext_resource type="PackedScene" uid="uid://o6hmhx52a8kb" path="res://screen/background.tscn" id="1_gwg8e"]
 [ext_resource type="PackedScene" uid="uid://cb3pnm686tull" path="res://screen/inventory.tscn" id="1_iv6vx"]
 [ext_resource type="Script" path="res://code/level_1.gd" id="1_juvff"]
-[ext_resource type="Texture2D" uid="uid://bhfknoq3m5y6b" path="res://img/background.png" id="2_xrrka"]
 [ext_resource type="PackedScene" uid="uid://yqqwp01yfbxl" path="res://screen/charater.tscn" id="3_a4fhu"]
+[ext_resource type="Theme" uid="uid://cje4s55txuuax" path="res://themes/gui_theme.tres" id="3_bbn3i"]
 [ext_resource type="PackedScene" uid="uid://dh8o8y5xl0lvt" path="res://screen/camera.tscn" id="4_1fli5"]
-[ext_resource type="Texture2D" uid="uid://e7k4ympggq5w" path="res://img/dirt-Sheet.png" id="5_5cch6"]
+[ext_resource type="PackedScene" uid="uid://c2otre38bxrfv" path="res://ui/game_over.tscn" id="5_s1uc8"]
 [ext_resource type="Texture2D" uid="uid://b0ei57mx8r7tn" path="res://img/bush.png" id="6_fbldh"]
 [ext_resource type="PackedScene" uid="uid://bmelk81uklx0f" path="res://screen/collected_item.tscn" id="7_55xhb"]
 [ext_resource type="Texture2D" uid="uid://n1sslofmaf80" path="res://img/van_go-Sheet.png" id="7_olmvl"]
 [ext_resource type="PackedScene" uid="uid://ohkbukxi5y7r" path="res://screen/Traps/DropTrap.tscn" id="9_4t2n5"]
 [ext_resource type="Texture2D" uid="uid://b1v37gdng3ors" path="res://img/dirt-Sheet_copy.png" id="9_mo7o5"]
-[ext_resource type="Texture2D" uid="uid://dtfuccmj7rtec" path="res://img/minhdz3.png" id="10_2efiw"]
 [ext_resource type="Texture2D" uid="uid://qaw0klqmpywd" path="res://img/eggplants.png" id="10_xgp43"]
+[ext_resource type="Texture2D" uid="uid://1g7r5or82dti" path="res://img/ground.png" id="11_sbkjs"]
 [ext_resource type="PackedScene" uid="uid://xv23mfq7leuy" path="res://screen/destroy_item.tscn" id="13_mdmbk"]
+[ext_resource type="Texture2D" uid="uid://dsf6f8tjuw5pj" path="res://img/square_rock.png" id="14_6gsla"]
 [ext_resource type="Texture2D" uid="uid://rvw7xhshuj2n" path="res://img/house.png" id="14_ggcc4"]
 [ext_resource type="PackedScene" uid="uid://c4bkf4iudq886" path="res://screen/use_item.tscn" id="17_5ch51"]
+[ext_resource type="Texture2D" uid="uid://cleu6250vteoo" path="res://img/rock.png" id="18_5m3oc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odlt7"]
 size = Vector2(178, 20)
@@ -24,8 +26,77 @@ size = Vector2(178, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am64f"]
 size = Vector2(180, 170)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wuw4"]
-texture = ExtResource("5_5cch6")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2p2bd"]
+texture = ExtResource("6_fbldh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_51qrn"]
+texture = ExtResource("10_xgp43")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tueu"]
+texture = ExtResource("14_6gsla")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkn3f"]
+texture = ExtResource("11_sbkjs")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5khi"]
+texture = ExtResource("9_mo7o5")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -37,46 +108,19 @@ texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2p2bd"]
-texture = ExtResource("6_fbldh")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rr4tu"]
-texture = ExtResource("9_mo7o5")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_51qrn"]
-texture = ExtResource("10_xgp43")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_tshfd"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 23
-sources/0 = SubResource("TileSetAtlasSource_3wuw4")
 sources/1 = SubResource("TileSetAtlasSource_2p2bd")
-sources/3 = SubResource("TileSetAtlasSource_rr4tu")
 sources/4 = SubResource("TileSetAtlasSource_51qrn")
+sources/5 = SubResource("TileSetAtlasSource_0tueu")
+sources/6 = SubResource("TileSetAtlasSource_tkn3f")
+sources/7 = SubResource("TileSetAtlasSource_c5khi")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nx61h"]
 size = Vector2(155, 50)
@@ -84,8 +128,20 @@ size = Vector2(155, 50)
 [sub_resource type="CircleShape2D" id="CircleShape2D_laomg"]
 radius = 32.7538
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wg726"]
+radius = 65.6201
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_wrgky"]
 radius = 23.5213
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_flx5e"]
+radius = 42.4264
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sci0"]
+size = Vector2(192, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8v7f8"]
+size = Vector2(192, 64)
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_juvff")
@@ -98,15 +154,12 @@ transform = Transform2D(1.99, 0, 0, 1.99, 0, 0)
 [node name="Background" parent="Background" instance=ExtResource("1_gwg8e")]
 position = Vector2(297.99, 256.784)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
-visible = false
-scale = Vector2(1.35, 1.35)
-texture = ExtResource("2_xrrka")
-centered = false
-
 [node name="Label" type="Label" parent="Background"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 7.03518
+offset_top = 0.502513
+offset_right = 77.0352
+offset_bottom = 32.5025
+theme = ExtResource("3_bbn3i")
 text = "Score: 0"
 
 [node name="FrontLayer" type="CanvasLayer" parent="."]
@@ -116,6 +169,9 @@ transform = Transform2D(1.99, 0, 0, 1.99, 0, 0)
 
 [node name="Inventory" parent="FrontLayer" instance=ExtResource("1_iv6vx")]
 position = Vector2(200, 10)
+
+[node name="GameOver" parent="." instance=ExtResource("5_s1uc8")]
+visible = false
 
 [node name="Camera" parent="." instance=ExtResource("4_1fli5")]
 position = Vector2(581, 321)
@@ -130,7 +186,7 @@ position = Vector2(-9, 120)
 shape = SubResource("RectangleShape2D_odlt7")
 
 [node name="DestroyItem" parent="Hourse" instance=ExtResource("13_mdmbk")]
-durability = 2
+durability = 10
 
 [node name="Sprite2D" parent="Hourse/DestroyItem" index="0"]
 texture = ExtResource("14_ggcc4")
@@ -147,12 +203,12 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_tshfd")
 cell_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 655359, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 65539, 0, 589845, 131075, 0, 589846, 196611, 0, 589847, 0, 0, 524303, 1, 0, 524302, 1, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 589860, 0, 0, 589861, 0, 0, 589862, 0, 0, 524297, 1, 0, 524288, 4, 0, 524293, 4, 0, 589863, 3, 0, 589864, 3, 0, 589865, 3, 0, 589866, 3, 0, 589867, 3, 0, 589868, 3, 0, 589869, 3, 0, 589870, 3, 0, 589871, 3, 0, 589872, 3, 0, 589873, 3, 0, 589874, 3, 0, 589875, 3, 0, 589876, 3, 0, 589877, 3, 0, 589878, 3, 0, 589879, 3, 0, 589880, 3, 0, 589881, 3, 0, 589882, 3, 0, 589883, 3, 0, 589884, 3, 0, 589885, 3, 0, 589886, 3, 0, 589887, 3, 0, 589888, 3, 0, 589889, 3, 0, 589890, 3, 0, 589891, 3, 0, 589892, 3, 0, 589893, 3, 0, 589894, 3, 0, 589895, 3, 0, 589896, 3, 0, 589897, 3, 0, 589898, 3, 0, 589899, 3, 0, 589900, 3, 0, 589901, 3, 0, 589902, 3, 0, 589903, 3, 0, 589904, 3, 0, 589905, 3, 0, 589906, 3, 0, 589907, 3, 0, 589908, 3, 0, 589909, 3, 0, 589910, 3, 0, 589911, 3, 0, 589912, 3, 0, 589913, 3, 0, 589914, 3, 0, 589915, 3, 0, 589916, 3, 0, 589917, 3, 0, 589918, 3, 0, 589919, 3, 0, 589920, 3, 0, 589921, 3, 0, 589922, 3, 0, 589923, 3, 0, 589924, 3, 0, 589925, 3, 0, 589926, 3, 0, 589927, 3, 0, 589928, 3, 0, 589929, 3, 0, 589930, 3, 0, 589931, 3, 0, 589932, 3, 0, 589933, 3, 0, 589934, 3, 0, 589935, 3, 0, 589936, 3, 0, 589937, 3, 0, 589938, 3, 0, 589939, 3, 0, 589940, 3, 0, 589941, 3, 0, 589942, 3, 0, 589943, 3, 0, 589944, 3, 0, 589945, 3, 0, 589946, 3, 0, 589947, 3, 0, 589948, 3, 0, 589949, 3, 0, 589950, 3, 0, 589951, 3, 0, 589952, 3, 0, 589953, 3, 0, 589954, 3, 0, 589955, 3, 0, 589956, 3, 0, 589957, 3, 0, 589958, 3, 0, 589959, 3, 0, 589960, 3, 0, 589961, 3, 0, 589962, 3, 0)
+layer_0/tile_data = PackedInt32Array(589824, 65542, 0, 589825, 65542, 0, 589826, 65542, 0, 589827, 65542, 0, 589828, 65542, 0, 589829, 65542, 0, 589830, 65542, 0, 589831, 65542, 0, 589832, 65542, 0, 589833, 65542, 0, 655359, 65542, 0, 589834, 65542, 0, 589835, 65542, 0, 589836, 65542, 0, 589837, 65542, 0, 589838, 65542, 0, 589839, 65542, 0, 589840, 65542, 0, 589841, 65542, 0, 589842, 65542, 0, 589843, 65542, 0, 589844, 65543, 0, 589845, 131079, 0, 589846, 196615, 0, 589847, 65542, 0, 524303, 1, 0, 524302, 1, 0, 589848, 65542, 0, 589849, 65542, 0, 589850, 65542, 0, 589851, 65542, 0, 589852, 65542, 0, 589853, 65542, 0, 589854, 65542, 0, 524297, 1, 0, 524288, 4, 0, 524293, 4, 0, 589866, 65542, 0, 589867, 65542, 0, 589868, 65542, 0, 589869, 65542, 0, 589870, 65542, 0, 589871, 65542, 0, 589872, 65542, 0, 589873, 65542, 0, 589874, 65542, 0, 589875, 65543, 0, 589876, 131079, 0, 589877, 196615, 0, 589878, 65542, 0, 589879, 65542, 0, 589880, 65542, 0, 589881, 65542, 0, 589882, 65542, 0, 589883, 65542, 0, 589884, 65542, 0, 589885, 65542, 0, 589886, 65542, 0, 589887, 65542, 0, 589888, 65542, 0, 589889, 65542, 0, 589890, 65542, 0, 589891, 65542, 0, 589904, 65542, 0, 589905, 65542, 0, 589906, 65542, 0, 589907, 65542, 0, 589908, 65542, 0, 589909, 65542, 0, 589910, 65542, 0, 589911, 65542, 0, 589912, 65542, 0, 589913, 65542, 0, 589914, 65542, 0, 589915, 65542, 0, 589916, 65542, 0, 589917, 65542, 0, 589918, 65542, 0, 589919, 65542, 0, 589920, 65542, 0, 589921, 65542, 0, 589922, 65542, 0, 589923, 65542, 0, 589924, 65542, 0, 589925, 65542, 0, 589926, 65542, 0, 589927, 65542, 0, 589928, 65542, 0, 589929, 65542, 0, 589930, 65542, 0, 589931, 65542, 0, 589932, 65542, 0, 589933, 65542, 0, 589934, 65542, 0, 589935, 65542, 0, 589936, 65542, 0, 589937, 65542, 0, 589938, 65542, 0, 589939, 65542, 0, 589940, 65542, 0, 589941, 65542, 0, 589942, 65542, 0, 589943, 65542, 0, 589944, 65542, 0, 589945, 65542, 0, 589946, 65542, 0, 589947, 65542, 0, 589948, 65542, 0, 589949, 65542, 0, 589950, 65542, 0, 589951, 65542, 0, 589952, 65542, 0, 589953, 65542, 0, 589954, 65542, 0, 589955, 65542, 0, 589956, 65542, 0, 589957, 65542, 0, 589958, 65542, 0, 589959, 65542, 0, 589960, 65542, 0, 589961, 65542, 0, 589962, 65542, 0, 589865, 65542, 0, 589864, 65542, 0, 589863, 65542, 0, 589862, 65542, 0, 589857, 65542, 0, 589856, 65542, 0, 589855, 65542, 0, 589858, 65542, 0, 589859, 65542, 0, 589860, 65542, 0, 589861, 65542, 0, 589899, 65542, 0, 589897, 65542, 0, 589896, 65542, 0, 589895, 65542, 0, 589903, 65542, 0, 589902, 65542, 0, 589901, 65542, 0, 589900, 65542, 0, 589898, 65542, 0)
 
 [node name="Woods" parent="." instance=ExtResource("7_55xhb")]
-position = Vector2(1085, 537)
+position = Vector2(789, 543)
 item_name = "wood"
-durability = 1
+durability = 5
 
 [node name="CollisionShape2D" parent="Woods" index="0"]
 position = Vector2(2.5, 15)
@@ -164,53 +220,85 @@ texture = ExtResource("7_olmvl")
 hframes = 3
 frame = 1
 
-[node name="Woods2" parent="." instance=ExtResource("7_55xhb")]
-position = Vector2(647, 539)
-item_name = "wood"
-durability = 1
-
-[node name="CollisionShape2D" parent="Woods2" index="0"]
-position = Vector2(2.5, 15)
-shape = SubResource("RectangleShape2D_nx61h")
-
-[node name="Sprite2D" parent="Woods2" index="1"]
-scale = Vector2(5, 5)
-texture = ExtResource("7_olmvl")
-hframes = 3
-frame = 1
-
-[node name="Woods3" parent="." instance=ExtResource("7_55xhb")]
-position = Vector2(849, 538)
-item_name = "wood"
-durability = 1
-
-[node name="CollisionShape2D" parent="Woods3" index="0"]
-position = Vector2(2.5, 15)
-shape = SubResource("RectangleShape2D_nx61h")
-
-[node name="Sprite2D" parent="Woods3" index="1"]
-scale = Vector2(5, 5)
-texture = ExtResource("7_olmvl")
-hframes = 3
-frame = 1
-
-[node name="DropTrap" parent="." instance=ExtResource("9_4t2n5")]
-position = Vector2(1328, 225)
+[node name="rock" parent="." instance=ExtResource("9_4t2n5")]
+position = Vector2(1866, 404)
 collision_mask = 15
 mass = 10.0
 
-[node name="CollisionShape2D" parent="DropTrap" index="0"]
+[node name="CollisionShape2D" parent="rock" index="0"]
 position = Vector2(-0.5, 0)
 shape = SubResource("CircleShape2D_laomg")
 
-[node name="Sprite2D" parent="DropTrap" index="1"]
-scale = Vector2(2, 2)
-texture = ExtResource("10_2efiw")
+[node name="DestroyItem" parent="rock" index="1"]
+durability = 5
+
+[node name="Sprite2D" parent="rock/DestroyItem" index="0"]
+scale = Vector2(4, 4)
+texture = ExtResource("18_5m3oc")
+
+[node name="CollisionShape2D" parent="rock/DestroyItem" index="1"]
+shape = SubResource("CircleShape2D_wg726")
+
+[node name="rock2" parent="." instance=ExtResource("9_4t2n5")]
+position = Vector2(2813, 377)
+collision_mask = 15
+mass = 10.0
+
+[node name="CollisionShape2D" parent="rock2" index="0"]
+position = Vector2(-0.5, 0)
+shape = SubResource("CircleShape2D_laomg")
+
+[node name="DestroyItem" parent="rock2" index="1"]
+durability = 5
+
+[node name="Sprite2D" parent="rock2/DestroyItem" index="0"]
+scale = Vector2(4, 4)
+texture = ExtResource("18_5m3oc")
+
+[node name="CollisionShape2D" parent="rock2/DestroyItem" index="1"]
+shape = SubResource("CircleShape2D_wg726")
+
+[node name="rock3" parent="." instance=ExtResource("9_4t2n5")]
+position = Vector2(2963, 381)
+collision_mask = 15
+mass = 0.5
+
+[node name="CollisionShape2D" parent="rock3" index="0"]
+position = Vector2(-0.5, 0)
+shape = SubResource("CircleShape2D_laomg")
+
+[node name="DestroyItem" parent="rock3" index="1"]
+durability = 5
+
+[node name="Sprite2D" parent="rock3/DestroyItem" index="0"]
+scale = Vector2(4, 4)
+texture = ExtResource("18_5m3oc")
+
+[node name="CollisionShape2D" parent="rock3/DestroyItem" index="1"]
+shape = SubResource("CircleShape2D_wg726")
+
+[node name="rock4" parent="." instance=ExtResource("9_4t2n5")]
+position = Vector2(3115, 379)
+collision_mask = 15
+mass = 10.0
+
+[node name="CollisionShape2D" parent="rock4" index="0"]
+position = Vector2(-0.5, 0)
+shape = SubResource("CircleShape2D_laomg")
+
+[node name="DestroyItem" parent="rock4" index="1"]
+durability = 5
+
+[node name="Sprite2D" parent="rock4/DestroyItem" index="0"]
+scale = Vector2(4, 4)
+texture = ExtResource("18_5m3oc")
+
+[node name="CollisionShape2D" parent="rock4/DestroyItem" index="1"]
+shape = SubResource("CircleShape2D_wg726")
 
 [node name="Actor" parent="." instance=ExtResource("3_a4fhu")]
-position = Vector2(397, 533)
+position = Vector2(424, 412)
 collision_mask = 14
-speed = 0
 
 [node name="Sprite2D" parent="Actor" index="0"]
 scale = Vector2(2, 2)
@@ -220,11 +308,47 @@ position = Vector2(0, 6)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_wrgky")
 
+[node name="CollisionShape2D" parent="Actor/DestroyItem" index="1"]
+shape = SubResource("CircleShape2D_flx5e")
+
 [node name="Use_item" parent="." instance=ExtResource("17_5ch51")]
 position = Vector2(1379, 618)
 
 [node name="CollisionShape2D" parent="Use_item" index="0"]
 position = Vector2(-3, 5)
+
+[node name="weakground" type="StaticBody2D" parent="."]
+position = Vector2(4416, 623)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="weakground"]
+position = Vector2(32, 0)
+shape = SubResource("RectangleShape2D_8sci0")
+
+[node name="DestroyItem" parent="weakground" instance=ExtResource("13_mdmbk")]
+
+[node name="Sprite2D" type="Sprite2D" parent="weakground/DestroyItem/Sprite2D" index="0"]
+position = Vector2(-32, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("9_mo7o5")
+hframes = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="weakground/DestroyItem/Sprite2D" index="1"]
+position = Vector2(32, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("9_mo7o5")
+hframes = 4
+
+[node name="Sprite2D3" type="Sprite2D" parent="weakground/DestroyItem/Sprite2D" index="2"]
+position = Vector2(96, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("9_mo7o5")
+hframes = 4
+
+[node name="CollisionShape2D" parent="weakground/DestroyItem" index="1"]
+position = Vector2(32, 0)
+shape = SubResource("RectangleShape2D_8v7f8")
 
 [connection signal="explore" from="Hourse/DestroyItem" to="." method="_on_destroy_item_explore"]
 [connection signal="dead_signal" from="Actor" to="." method="_on_actor_dead_signal"]
@@ -232,8 +356,15 @@ position = Vector2(-3, 5)
 [editable path="FrontLayer/Inventory"]
 [editable path="Hourse/DestroyItem"]
 [editable path="Woods"]
-[editable path="Woods2"]
-[editable path="Woods3"]
-[editable path="DropTrap"]
+[editable path="rock"]
+[editable path="rock/DestroyItem"]
+[editable path="rock2"]
+[editable path="rock2/DestroyItem"]
+[editable path="rock3"]
+[editable path="rock3/DestroyItem"]
+[editable path="rock4"]
+[editable path="rock4/DestroyItem"]
 [editable path="Actor"]
+[editable path="Actor/DestroyItem"]
 [editable path="Use_item"]
+[editable path="weakground/DestroyItem"]
