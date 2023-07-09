@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b0w5i3xotrg0k"]
+[gd_scene load_steps=45 format=3 uid="uid://b0w5i3xotrg0k"]
 
 [ext_resource type="PackedScene" uid="uid://o6hmhx52a8kb" path="res://screen/background.tscn" id="1_gwg8e"]
 [ext_resource type="PackedScene" uid="uid://cb3pnm686tull" path="res://screen/inventory.tscn" id="1_iv6vx"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://n1sslofmaf80" path="res://img/van_go-Sheet.png" id="7_olmvl"]
 [ext_resource type="PackedScene" uid="uid://ohkbukxi5y7r" path="res://screen/Traps/DropTrap.tscn" id="9_4t2n5"]
 [ext_resource type="Texture2D" uid="uid://35tgprgil6hm" path="res://img/Cay.png" id="9_apji7"]
+[ext_resource type="Texture2D" uid="uid://dt5ylgvq4h8kx" path="res://img/pixil-frame-0.png" id="9_mlws6"]
 [ext_resource type="Texture2D" uid="uid://b1v37gdng3ors" path="res://img/dirt-Sheet_copy.png" id="9_mo7o5"]
 [ext_resource type="Texture2D" uid="uid://qaw0klqmpywd" path="res://img/eggplants.png" id="10_xgp43"]
 [ext_resource type="Texture2D" uid="uid://1g7r5or82dti" path="res://img/ground.png" id="11_sbkjs"]
@@ -297,6 +298,10 @@ texture = ExtResource("14_ggcc4")
 [node name="CollisionShape2D" parent="Hourse/DestroyItem" index="1"]
 position = Vector2(-9, 43)
 shape = SubResource("RectangleShape2D_am64f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8830, 562)
+texture = ExtResource("9_mlws6")
 
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 16
