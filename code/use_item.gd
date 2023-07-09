@@ -16,6 +16,7 @@ func _process(delta):
 				item.texture_normal = load(read_json_file('res://code/item.json')['null'])
 				item.item_name = 'null'
 				item.blank = true
+				AudioManager.play("place")
 				queue_free()
 		Global.current_item = '0'
 
