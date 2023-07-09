@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://baja0uofgt2fa"]
+
+[ext_resource type="Texture2D" uid="uid://n1sslofmaf80" path="res://img/van_go-Sheet.png" id="1_67ete"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbjpm"]
+size = Vector2(24, 2.25)
+
+[node name="matdat" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_bbjpm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6, 6)
+texture = ExtResource("1_67ete")
+hframes = 3
+frame = 2
