@@ -59,11 +59,11 @@ position = Vector2(-6, 2)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_0jvp1")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(381, -538)
-offset = Vector2(50, 350)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_4u11o")
 }
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

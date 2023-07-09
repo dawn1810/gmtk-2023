@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ce8dkb0jfxnxi"]
 
-[ext_resource type="Script" path="res://DragPreview.gd" id="1_vvhqj"]
+[ext_resource type="Script" path="res://code/DragPreview.gd" id="1_vvhqj"]
 
 [node name="DragPreview" type="Sprite2D"]
 z_index = 100
