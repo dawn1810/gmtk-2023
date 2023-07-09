@@ -3,9 +3,8 @@
 [ext_resource type="Script" path="res://code/Character.gd" id="1_whjdw"]
 [ext_resource type="Texture2D" uid="uid://dnarjtxod53sa" path="res://img/player-Sheet.png" id="2_fewbx"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lq8ks"]
-radius = 2.68657
-height = 6.48508
+[sub_resource type="CircleShape2D" id="CircleShape2D_54aut"]
+radius = 2.83612
 
 [sub_resource type="Animation" id="Animation_4dc77"]
 length = 0.001
@@ -85,16 +84,16 @@ _data = {
 collision_mask = 6
 script = ExtResource("1_whjdw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.27499)
-scale = Vector2(6.7, 6.7)
-shape = SubResource("CapsuleShape2D_lq8ks")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_fewbx")
 hframes = 15
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.27499)
+scale = Vector2(6.7, 6.7)
+shape = SubResource("CircleShape2D_54aut")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"

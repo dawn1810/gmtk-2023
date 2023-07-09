@@ -4,7 +4,9 @@ const DRAGPREVIEW = preload("res://screen/drag_preview.tscn")
 
 var lable: String
 var droped_on_target: bool = false
+
 @export var item_name : String
+@export var blank : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

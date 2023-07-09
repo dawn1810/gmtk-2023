@@ -1,21 +1,82 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmelk81uklx0f"]
+[gd_scene load_steps=5 format=3 uid="uid://bmelk81uklx0f"]
 
 [ext_resource type="Script" path="res://code/CollectedItem.gd" id="1_xdxgs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_soil2"]
-size = Vector2(155, 45)
+[sub_resource type="Animation" id="Animation_l67or"]
+resource_name = "shake"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-10, 3), Vector2(11, -4), Vector2(-13, -1), Vector2(9, 9), Vector2(-7, 3), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xe05x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pijam"]
+_data = {
+"RESET": SubResource("Animation_xe05x"),
+"shake": SubResource("Animation_l67or")
+}
 
 [node name="CollectedItem" type="Area2D"]
-position = Vector2(482, 524)
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("1_xdxgs")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 17.5)
-shape = SubResource("RectangleShape2D_soil2")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pijam")
+}
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

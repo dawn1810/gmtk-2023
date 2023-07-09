@@ -16,8 +16,6 @@ func _integrate_forces(Pysic):
 	$AnimationPlayer.play("scroll")
 	apply_central_impulse(Vector2(SPEED, 0))
 
-
-
 func dead():
 	SPEED = 0
 #	$"../Camera".speed = 0
@@ -25,11 +23,6 @@ func dead():
 #	await get_tree().reload_current_scene()
 	#await queue_free()
 	print('show dead screen')
-
-
-
-
-
 
 func _on_visible_on_screen_enabler_2d_screen_exited():
 	dead()

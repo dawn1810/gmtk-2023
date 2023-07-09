@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dr6eam57w5dxt" path="res://audio/yt1s_XiDPt6n.mp3" id="4_y0feo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0j22"]
-size = Vector2(3.73134, 3.20895)
+size = Vector2(3.35821, 3.65672)
 
 [sub_resource type="Animation" id="Animation_kce6j"]
 length = 0.001
@@ -62,7 +62,7 @@ texture = ExtResource("2_4wohp")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(-11.25, 12.25)
 scale = Vector2(6.7, 6.7)
 shape = SubResource("RectangleShape2D_r0j22")
 

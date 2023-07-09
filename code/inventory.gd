@@ -2,6 +2,8 @@ extends Node2D
 
 @export var item_list : Array
 
+const max_items = 5
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
