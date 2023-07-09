@@ -56,13 +56,19 @@ position = Vector2(647, 320.5)
 shape = SubResource("RectangleShape2D_mk7y8")
 
 [node name="DropTrap" parent="." instance=ExtResource("9_4t2n5")]
+<<<<<<< Updated upstream
 position = Vector2(711, 221)
 mass = 2.0
 inertia = 0.1
-
+=======
+<<<<<<< HEAD
+position = Vector2(873, 88)
+=======
 position = Vector2(711, 221)
 mass = 2.0
 inertia = 0.1
+>>>>>>> 0e3515cd03b15bbc278912ee4527338c97de3cce
+>>>>>>> Stashed changes
 
 [node name="CollisionShape2D" parent="DropTrap" index="0"]
 shape = SubResource("CircleShape2D_yyu2k")
@@ -74,6 +80,8 @@ texture = ExtResource("10_2efiw")
 [node name="PopCat" parent="." instance=ExtResource("3_8aarr")]
 position = Vector2(117, 360)
 
+<<<<<<< HEAD
+=======
 [node name="wood" parent="." instance=ExtResource("7_55xhb")]
 position = Vector2(1000, 531)
 scale = Vector2(2, 2)
@@ -90,6 +98,7 @@ frame = 1
 position = Vector2(1.19043, 6.54745)
 shape = SubResource("RectangleShape2D_lat2k")
 
+>>>>>>> 0e3515cd03b15bbc278912ee4527338c97de3cce
 [node name="Actor" parent="." instance=ExtResource("3_a4fhu")]
 position = Vector2(404, 383)
 collision_mask = 14
@@ -104,6 +113,8 @@ scale = Vector2(2, 2)
 
 [node name="Camera" parent="." instance=ExtResource("4_1fli5")]
 position = Vector2(581, 321)
+<<<<<<< Updated upstream
+=======
 
 [node name="Woods" type="StaticBody2D" parent="."]
 position = Vector2(577, 263)
@@ -129,9 +140,16 @@ number = 1
 position = Vector2(1.19047, 8.33333)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0bud4")
+>>>>>>> Stashed changes
 
 [editable path="FrontLayer/Inventory"]
 [editable path="DropTrap"]
+<<<<<<< HEAD
 [editable path="Woods/CollectedItem"]
+=======
 [editable path="wood"]
 [editable path="Actor"]
+<<<<<<< Updated upstream
+=======
+>>>>>>> 0e3515cd03b15bbc278912ee4527338c97de3cce
+>>>>>>> Stashed changes
