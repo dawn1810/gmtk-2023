@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0w5i3xotrg0k"]
+[gd_scene load_steps=14 format=3 uid="uid://b0w5i3xotrg0k"]
 
 [ext_resource type="PackedScene" uid="uid://cb3pnm686tull" path="res://screen/inventory.tscn" id="1_iv6vx"]
 [ext_resource type="Texture2D" uid="uid://bhfknoq3m5y6b" path="res://img/background.png" id="2_xrrka"]
@@ -16,8 +16,11 @@ size = Vector2(1294, 81)
 [sub_resource type="CircleShape2D" id="CircleShape2D_yyu2k"]
 radius = 37.1214
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lat2k"]
-size = Vector2(61.9048, 17.8572)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s76mm"]
+size = Vector2(62, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bud4"]
+size = Vector2(78.5714, 23.8095)
 
 [node name="Level_1" type="Node2D"]
 
@@ -53,9 +56,19 @@ position = Vector2(647, 320.5)
 shape = SubResource("RectangleShape2D_mk7y8")
 
 [node name="DropTrap" parent="." instance=ExtResource("9_4t2n5")]
+<<<<<<< Updated upstream
 position = Vector2(711, 221)
 mass = 2.0
 inertia = 0.1
+=======
+<<<<<<< HEAD
+position = Vector2(873, 88)
+=======
+position = Vector2(711, 221)
+mass = 2.0
+inertia = 0.1
+>>>>>>> 0e3515cd03b15bbc278912ee4527338c97de3cce
+>>>>>>> Stashed changes
 
 [node name="CollisionShape2D" parent="DropTrap" index="0"]
 shape = SubResource("CircleShape2D_yyu2k")
@@ -67,6 +80,8 @@ texture = ExtResource("10_2efiw")
 [node name="PopCat" parent="." instance=ExtResource("3_8aarr")]
 position = Vector2(117, 360)
 
+<<<<<<< HEAD
+=======
 [node name="wood" parent="." instance=ExtResource("7_55xhb")]
 position = Vector2(1000, 531)
 scale = Vector2(2, 2)
@@ -83,6 +98,7 @@ frame = 1
 position = Vector2(1.19043, 6.54745)
 shape = SubResource("RectangleShape2D_lat2k")
 
+>>>>>>> 0e3515cd03b15bbc278912ee4527338c97de3cce
 [node name="Actor" parent="." instance=ExtResource("3_a4fhu")]
 position = Vector2(404, 383)
 collision_mask = 14
@@ -97,8 +113,43 @@ scale = Vector2(2, 2)
 
 [node name="Camera" parent="." instance=ExtResource("4_1fli5")]
 position = Vector2(581, 321)
+<<<<<<< Updated upstream
+=======
+
+[node name="Woods" type="StaticBody2D" parent="."]
+position = Vector2(577, 263)
+collision_layer = 16
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Woods"]
+position = Vector2(1, 7)
+shape = SubResource("RectangleShape2D_s76mm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Woods"]
+scale = Vector2(2, 2)
+texture = ExtResource("7_olmvl")
+hframes = 3
+frame = 1
+
+[node name="CollectedItem" parent="Woods" instance=ExtResource("7_55xhb")]
+scale = Vector2(0.84, 0.84)
+item_name = "wood"
+number = 1
+
+[node name="CollisionShape2D" parent="Woods/CollectedItem" index="0"]
+position = Vector2(1.19047, 8.33333)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0bud4")
+>>>>>>> Stashed changes
 
 [editable path="FrontLayer/Inventory"]
 [editable path="DropTrap"]
+<<<<<<< HEAD
+[editable path="Woods/CollectedItem"]
+=======
 [editable path="wood"]
 [editable path="Actor"]
+<<<<<<< Updated upstream
+=======
+>>>>>>> 0e3515cd03b15bbc278912ee4527338c97de3cce
+>>>>>>> Stashed changes
