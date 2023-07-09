@@ -19,3 +19,7 @@ func _on_destroy_item_explore():
 	pop_cat.global_position = $Hourse.global_position
 	add_child(pop_cat)
 	pop_cat.speed = 100
+
+
+func _on_actor_dead_signal():
+	$Camera.speed = 0

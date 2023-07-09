@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+signal dead_signal
 
 @export var speed = 0
 
@@ -16,11 +17,18 @@ func _integrate_forces(Physic):
 	self.linear_velocity.x = speed
 
 func dead():
+	emit_signal('dead_signal')
 	speed = 0
 	$AnimationPlayer.play("dead")
 	print('show dead screen')
 
-func _on_visible_on_screen_enabler_2d_screen_exited():
+func dead_out():
+	emit_signal('dead_signal')
+	speed = 0
 	queue_free()
+	print('show dead screen')
+
+func _on_visible_on_screen_enabler_2d_screen_exited():
+	dead_out()
 
 
