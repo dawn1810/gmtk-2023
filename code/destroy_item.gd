@@ -1,5 +1,7 @@
 extends Area2D
 
+signal explore
+
 @export var durability : int = 0
 
 var mouse_inside_area = false 
@@ -10,8 +12,10 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released("RightMouse") && mouse_inside_area:
 		durability -= 1
+		$AnimationPlayer.play("idle")
 		if (durability <= 0) : 
 			get_parent().queue_free()
+			emit_signal('explore')
 	
 func read_json_file(file_path):
 	var json_as_text = FileAccess.get_file_as_string(file_path)

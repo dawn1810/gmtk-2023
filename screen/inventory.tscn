@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://code/inventory.gd" id="1_4aabr"]
 [ext_resource type="PackedScene" uid="uid://wggrkym3w0t5" path="res://screen/item.tscn" id="1_jsm7m"]
 [ext_resource type="Texture2D" uid="uid://cu1khga0j6jej" path="res://img/inventoryBox.png" id="2_smpda"]
-[ext_resource type="Texture2D" path="res://img/cleartoolbox.png" id="4_dhr7b"]
+[ext_resource type="Texture2D" uid="uid://i64g475u8g2y" path="res://img/cleartoolbox.png" id="4_dhr7b"]
 
 [node name="Inventory" type="Node2D"]
 script = ExtResource("1_4aabr")
