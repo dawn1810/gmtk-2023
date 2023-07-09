@@ -12,6 +12,7 @@ func _on_destroy_item_explore():
 	var pop_cat = POP_CAT.instantiate() 
 	pop_cat.global_position = $Hourse.global_position
 	add_child(pop_cat)
+	$PopCatSFXPlayer.play()
 
 
 func _on_actor_dead_signal():

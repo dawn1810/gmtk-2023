@@ -10,9 +10,12 @@ script = ExtResource("1_qemhe")
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_t6vha")
 autoplay = true
+attenuation = 1e-05
 bus = &"Music"
-area_mask = 0
 
 [node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_v82uc")
 bus = &"SFX"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true

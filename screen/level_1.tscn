@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b0w5i3xotrg0k"]
+[gd_scene load_steps=36 format=3 uid="uid://b0w5i3xotrg0k"]
 
 [ext_resource type="PackedScene" uid="uid://o6hmhx52a8kb" path="res://screen/background.tscn" id="1_gwg8e"]
 [ext_resource type="PackedScene" uid="uid://cb3pnm686tull" path="res://screen/inventory.tscn" id="1_iv6vx"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://rvw7xhshuj2n" path="res://img/house.png" id="14_ggcc4"]
 [ext_resource type="PackedScene" uid="uid://c4bkf4iudq886" path="res://screen/use_item.tscn" id="17_5ch51"]
 [ext_resource type="Texture2D" uid="uid://cleu6250vteoo" path="res://img/rock.png" id="18_5m3oc"]
+[ext_resource type="AudioStream" uid="uid://dr6eam57w5dxt" path="res://audio/yt1s_XiDPt6n.mp3" id="20_ruqe7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odlt7"]
 size = Vector2(178, 20)
@@ -474,6 +475,10 @@ hframes = 4
 [node name="CollisionShape2D" parent="weakground/DestroyItem" index="1"]
 position = Vector2(32, 0)
 shape = SubResource("RectangleShape2D_8v7f8")
+
+[node name="PopCatSFXPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_ruqe7")
+bus = &"SFX"
 
 [connection signal="explore" from="Hourse/DestroyItem" to="." method="_on_destroy_item_explore"]
 [connection signal="dead_signal" from="Actor" to="." method="_on_actor_dead_signal"]
