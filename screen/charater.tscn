@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://code/Character.gd" id="1_whjdw"]
 [ext_resource type="Texture2D" uid="uid://v3so52lgasfp" path="res://img/3914692.512.webp" id="2_0jvp1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yqvr6"]
-radius = 13.1343
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lptcv"]
+size = Vector2(24.3284, 26.2687)
 
 [sub_resource type="Animation" id="Animation_2ahti"]
 length = 0.001
@@ -45,17 +45,23 @@ _data = {
 }
 
 [node name="Actor" type="CharacterBody2D"]
+position = Vector2(0, 400)
 collision_mask = 6
 script = ExtResource("1_whjdw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 4)
 scale = Vector2(6.7, 6.7)
-shape = SubResource("CircleShape2D_yqvr6")
+shape = SubResource("RectangleShape2D_lptcv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-16, 0)
+position = Vector2(-6, 2)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_0jvp1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(381, -538)
+offset = Vector2(50, 350)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
