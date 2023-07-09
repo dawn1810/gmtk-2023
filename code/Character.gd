@@ -14,7 +14,8 @@ func _ready():
 
 func _integrate_forces(Pysic):
 	$AnimationPlayer.play("scroll")
-	apply_central_impulse(Vector2(SPEED, 0))
+#	apply_central_impulse(Vector2(SPEED, 0))
+	self.linear_velocity.x = 100
 
 func dead():
 	SPEED = 0

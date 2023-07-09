@@ -74,7 +74,7 @@ hframes = 3
 frame = 1
 
 [node name="PopCat" parent="." instance=ExtResource("3_8aarr")]
-position = Vector2(117, 360)
+position = Vector2(152, 343)
 
 [node name="DropTrap" parent="." instance=ExtResource("9_4t2n5")]
 position = Vector2(1328, 225)
@@ -92,7 +92,7 @@ texture = ExtResource("10_2efiw")
 [node name="Actor" parent="." instance=ExtResource("3_a4fhu")]
 position = Vector2(404, 383)
 collision_mask = 14
-SPEED = 2
+SPEED = 0
 
 [node name="Sprite2D" parent="Actor" index="0"]
 scale = Vector2(2, 2)
