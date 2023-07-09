@@ -53,6 +53,8 @@ pointing/emulate_mouse_from_touch=false
 2d_physics/layer_1="player"
 2d_physics/layer_2="ground"
 2d_physics/layer_3="trap"
+2d_physics/layer_4="pop_cat"
+2d_physics/layer_5="item"
 
 [rendering]
 

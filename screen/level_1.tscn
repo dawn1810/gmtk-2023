@@ -10,14 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://ohkbukxi5y7r" path="res://screen/Traps/DropTrap.tscn" id="9_4t2n5"]
 [ext_resource type="Texture2D" uid="uid://dtfuccmj7rtec" path="res://img/minhdz3.png" id="10_2efiw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lat2k"]
-size = Vector2(61.9048, 17.8572)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk7y8"]
 size = Vector2(1294, 41)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yyu2k"]
 radius = 37.1214
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lat2k"]
+size = Vector2(61.9048, 17.8572)
 
 [node name="Level_1" type="Node2D"]
 
@@ -29,28 +29,16 @@ scale = Vector2(1.35, 1.35)
 texture = ExtResource("2_xrrka")
 centered = false
 
+[node name="Label" type="Label" parent="Background"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"
+
 [node name="FrontLayer" type="CanvasLayer" parent="."]
 layer = 128
 
 [node name="Inventory" parent="FrontLayer" instance=ExtResource("1_iv6vx")]
 position = Vector2(200, 10)
-
-[node name="wood" parent="." instance=ExtResource("7_55xhb")]
-position = Vector2(218, 269)
-scale = Vector2(0.84, 0.84)
-item_name = "wood"
-number = 1
-
-[node name="Sprite2D" parent="wood" index="0"]
-scale = Vector2(2, 2)
-texture = ExtResource("7_olmvl")
-hframes = 3
-frame = 1
-
-[node name="CollisionShape2D" parent="wood" index="1"]
-position = Vector2(1.19043, 6.54745)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_lat2k")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -71,6 +59,23 @@ texture = ExtResource("10_2efiw")
 [node name="PopCat" parent="." instance=ExtResource("3_8aarr")]
 position = Vector2(58, 99)
 
+[node name="wood" parent="." instance=ExtResource("7_55xhb")]
+position = Vector2(218, 269)
+scale = Vector2(0.84, 0.84)
+item_name = "wood"
+number = 1
+
+[node name="Sprite2D" parent="wood" index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("7_olmvl")
+hframes = 3
+frame = 1
+
+[node name="CollisionShape2D" parent="wood" index="1"]
+position = Vector2(1.19043, 6.54745)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lat2k")
+
 [node name="Actor" parent="." instance=ExtResource("3_a4fhu")]
 position = Vector2(276, 217)
 
@@ -78,5 +83,5 @@ position = Vector2(276, 217)
 position = Vector2(289, 162)
 
 [editable path="FrontLayer/Inventory"]
-[editable path="wood"]
 [editable path="DropTrap"]
+[editable path="wood"]

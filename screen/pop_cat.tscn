@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv544l7cgdtnr"]
+[gd_scene load_steps=10 format=3 uid="uid://bv544l7cgdtnr"]
 
 [ext_resource type="Script" path="res://code/pop_cat.gd" id="1_t5s4j"]
 [ext_resource type="Texture2D" uid="uid://qvalhw0ve0ol" path="res://img/popCAt-Sheet.png" id="2_4wohp"]
 [ext_resource type="PackedScene" uid="uid://2d37fsojmbxx" path="res://screen/Traps/Trap.tscn" id="3_vo1be"]
+[ext_resource type="AudioStream" uid="uid://dr6eam57w5dxt" path="res://audio/yt1s_XiDPt6n.mp3" id="4_y0feo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0j22"]
 size = Vector2(3.73134, 3.20895)
@@ -50,7 +51,8 @@ _data = {
 size = Vector2(73, 104)
 
 [node name="PopCat" type="CharacterBody2D"]
-collision_mask = 6
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_t5s4j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -70,9 +72,18 @@ libraries = {
 }
 
 [node name="Trap" parent="." instance=ExtResource("3_vo1be")]
+collision_layer = 8
+collision_mask = 21
 
 [node name="CollisionShape2D" parent="Trap" index="1"]
 position = Vector2(-23.5, 7)
 shape = SubResource("RectangleShape2D_vqlv8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_y0feo")
+autoplay = true
+bus = &"SFX"
+
+[connection signal="area_entered" from="Trap" to="Trap" method="_on_area_entered"]
 
 [editable path="Trap"]
