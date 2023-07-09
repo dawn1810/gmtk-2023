@@ -24,7 +24,7 @@ func _get_drag_data(at_position):
 	var dragPrieview = DRAGPREVIEW.instantiate()
 	dragPrieview.texture = texture_normal
 	Global.current_item = self.item_name
-#	Global.current_pos = self.get_parent().
+	Global.current_pos = self.get_parent().get_index()
 	#dragPrieview.item_name = self.item_name
 	add_child(dragPrieview)
 	

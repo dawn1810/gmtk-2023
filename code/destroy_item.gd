@@ -12,6 +12,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released("RightMouse") && mouse_inside_area:
 		durability -= 1
+		print(durability)
 		$AnimationPlayer.play("idle")
 		if (durability <= 0) : 
 			get_parent().queue_free()
