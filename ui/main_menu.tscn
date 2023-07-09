@@ -107,6 +107,7 @@ mouse_filter = 1
 theme = ExtResource("1_cwbmi")
 text = "close"
 
+[connection signal="button_down" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_button_down"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
 [connection signal="gui_input" from="CreditMenu/CloseTxt" to="." method="_on_close_txt_gui_input"]

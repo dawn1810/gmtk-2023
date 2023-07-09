@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 
+
 func _on_setting_button_pressed():
 	AudioManager.play_click()
 	AudioSettingUI.show()
@@ -14,3 +15,7 @@ func _on_close_txt_gui_input(event:InputEvent):
 func _on_credit_button_pressed():
 	AudioManager.play_click()
 	$CreditMenu.show()
+
+
+func _on_play_button_button_down():
+	get_tree().change_scene_to_file("res://screen/main.tscn")

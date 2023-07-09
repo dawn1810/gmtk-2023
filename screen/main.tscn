@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgl8j18a1lkdg"]
+[gd_scene load_steps=12 format=3 uid="uid://cgl8j18a1lkdg"]
 
 [ext_resource type="Texture2D" uid="uid://cleu6250vteoo" path="res://img/image.png" id="1_4oriw"]
 [ext_resource type="Texture2D" uid="uid://bhfknoq3m5y6b" path="res://img/background.png" id="1_ikwc1"]
+[ext_resource type="Script" path="res://code/main.gd" id="1_yymmk"]
 [ext_resource type="PackedScene" uid="uid://yqqwp01yfbxl" path="res://screen/charater.tscn" id="2_d1b8j"]
 [ext_resource type="PackedScene" uid="uid://ohkbukxi5y7r" path="res://screen/Traps/DropTrap.tscn" id="3_tdocg"]
-[ext_resource type="Script" path="res://code/not a trap.gd" id="4_v142w"]
-[ext_resource type="Texture2D" uid="uid://bqfiyavbp1v8a" path="res://img/png-transparent-plants-vs-zombies-2-it-s-about-time-plants-vs-zombies-garden-warfare-2-english-walnut-popcap-games-plants-vs-zombies-food-video-game-smiley.webp" id="5_s0pkr"]
+[ext_resource type="PackedScene" uid="uid://cb3pnm686tull" path="res://screen/inventory.tscn" id="6_c3toe"]
+[ext_resource type="Script" path="res://code/Camera2D.gd" id="8_3glms"]
+[ext_resource type="Script" path="res://code/TestTrap.gd" id="9_ibk88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84r2w"]
 size = Vector2(1614, 95)
@@ -13,11 +15,16 @@ size = Vector2(1614, 95)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dna5j"]
 size = Vector2(49.375, 9)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dce5"]
-size = Vector2(151, 145)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnysr"]
+size = Vector2(85, 85)
 
 [node name="main" type="Node2D"]
-position = Vector2(-1, 0)
+script = ExtResource("1_yymmk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("6_c3toe")]
+position = Vector2(409, 39)
 
 [node name="gound" type="StaticBody2D" parent="."]
 position = Vector2(363, 539)
@@ -27,8 +34,7 @@ collision_layer = 2
 shape = SubResource("RectangleShape2D_84r2w")
 
 [node name="gound2" type="StaticBody2D" parent="."]
-position = Vector2(1107, 323)
-rotation = -0.814416
+position = Vector2(1621, 531)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gound2"]
@@ -45,21 +51,25 @@ position = Vector2(362, 186)
 scale = Vector2(3.374, 3.374)
 texture = ExtResource("1_ikwc1")
 
-[node name="not a trap" type="RigidBody2D" parent="."]
-position = Vector2(-400, -27)
-collision_layer = 4
-collision_mask = 7
-input_pickable = true
-script = ExtResource("4_v142w")
-
-[node name="Sprite2D" type="Sprite2D" parent="not a trap"]
-texture = ExtResource("5_s0pkr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="not a trap"]
-shape = SubResource("RectangleShape2D_5dce5")
-
 [node name="Actor" parent="." instance=ExtResource("2_d1b8j")]
-position = Vector2(79, 275)
+position = Vector2(116, 262)
 
 [node name="DropTrap" parent="." instance=ExtResource("3_tdocg")]
-position = Vector2(1112, 12)
+position = Vector2(1532, 101)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(126, 261)
+position_smoothing_enabled = true
+script = ExtResource("8_3glms")
+
+[node name="TestTrap" type="Area2D" parent="."]
+position = Vector2(1287, 532)
+script = ExtResource("9_ibk88")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestTrap"]
+shape = SubResource("RectangleShape2D_tnysr")
+
+[connection signal="mouse_entered" from="TestTrap" to="TestTrap" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TestTrap" to="TestTrap" method="_on_mouse_exited"]
+
+[editable path="CanvasLayer/Inventory"]
