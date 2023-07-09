@@ -7,7 +7,7 @@
 size = Vector2(24, 2.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6t8j"]
-size = Vector2(192, 18)
+size = Vector2(164, 72)
 
 [node name="wood" type="StaticBody2D"]
 collision_layer = 2

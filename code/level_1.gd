@@ -12,9 +12,12 @@ func _on_destroy_item_explore():
 	var pop_cat = POP_CAT.instantiate() 
 	pop_cat.global_position = $Hourse.global_position
 	add_child(pop_cat)
+	pop_cat.speed = 180
 	$PopCatSFXPlayer.play()
 
 
 func _on_actor_dead_signal():
 	$Camera.speed = 0
 	$GameOver.show()
+
+

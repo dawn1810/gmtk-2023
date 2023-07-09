@@ -1,7 +1,10 @@
 extends Area2D
 
+signal push_stone
+
 var mouse_inside_area = false 
 const wood = preload("res://screen/wood.tscn")
+const r_wood = preload("res://screen/rotate_wood.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_released("LeftMouse") :
@@ -18,7 +21,18 @@ func _process(delta):
 				item.blank = true
 				AudioManager.play("place")
 				queue_free()
-		Global.current_item = '0'
+			if Global.current_item == 'r_wood':
+				emit_signal("push_stone")
+				var wood_full = r_wood.instantiate()
+				wood_full.global_position = Vector2(self.global_position.x, self.global_position.y - 30) 
+				get_parent().add_child(wood_full)
+				var item = get_parent().get_node('FrontLayer/Inventory/Control/HBoxContainer/CenterContainer' + str(Global.current_pos+1) + '/Item')
+				item.texture_normal = load(read_json_file('res://code/item.json')['null'])
+				item.item_name = 'null'
+				item.blank = true
+				AudioManager.play("place")
+				queue_free()
+			Global.current_item = '0'
 
 func _on_mouse_entered():
 	mouse_inside_area = true

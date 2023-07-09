@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0vbnvcyuagb0"]
+
+[ext_resource type="PackedScene" uid="uid://xv23mfq7leuy" path="res://screen/destroy_item.tscn" id="1_2lqa5"]
+[ext_resource type="Texture2D" uid="uid://n1sslofmaf80" path="res://img/van_go-Sheet.png" id="2_04rvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tspme"]
+size = Vector2(3, 21.9324)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkj1d"]
+size = Vector2(38.8909, 200.818)
+
+[node name="rotate_wood" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13.4657, 8.46573)
+rotation = 0.785398
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_tspme")
+
+[node name="DestroyItem" parent="." instance=ExtResource("1_2lqa5")]
+durability = 3
+
+[node name="Sprite2D" parent="DestroyItem" index="0"]
+scale = Vector2(6, 6)
+texture = ExtResource("2_04rvu")
+hframes = 3
+
+[node name="CollisionShape2D" parent="DestroyItem" index="1"]
+position = Vector2(0.250004, 4.25)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_nkj1d")
+
+[editable path="DestroyItem"]

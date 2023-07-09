@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 
-@export var speed = 100
+@export var speed = 0
 
 func _integrate_forces(Physic):
 	self.rotation_degrees = 0.0
