@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://8jxe4bdqfbvh"]
+
+[ext_resource type="Script" path="res://ui/game_over.gd" id="1_3emy0"]
+[ext_resource type="Theme" uid="uid://cje4s55txuuax" path="res://themes/gui_theme.tres" id="1_al1b6"]
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_3emy0")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_al1b6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 81
+text = "Game Over"
+
+[node name="replay_btn" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Replay"
+
+[node name="menu_btn" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "back to main menu"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/replay_btn" to="." method="_on_replay_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/menu_btn" to="." method="_on_menu_btn_pressed"]
