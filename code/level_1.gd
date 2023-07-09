@@ -4,13 +4,7 @@ const POP_CAT = preload("res://screen/pop_cat.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+	$GameOver.hide()
 
 func _on_destroy_item_explore():
 	$Camera.speed = 100
@@ -18,3 +12,8 @@ func _on_destroy_item_explore():
 	var pop_cat = POP_CAT.instantiate() 
 	pop_cat.global_position = $Hourse.global_position
 	add_child(pop_cat)
+
+
+func _on_actor_dead_signal():
+	$Camera.speed = 0
+	$GameOver.show()

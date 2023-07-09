@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://culyprencpalr"]
+
+[ext_resource type="Texture2D" uid="uid://dif3gaebpalgl" path="res://img/pixil-frame.png" id="1_i1yl0"]
+
+[sub_resource type="Animation" id="Animation_pxovg"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vaa1w"]
+_data = {
+"idle": SubResource("Animation_pxovg")
+}
+
+[node name="Board" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5625, 1)
+texture = ExtResource("1_i1yl0")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+offset_top = 8.0
+offset_right = 162.0
+offset_bottom = 60.0
+text = "Right click 
+to destroy"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vaa1w")
+}
