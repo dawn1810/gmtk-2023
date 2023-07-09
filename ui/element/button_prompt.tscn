@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://dpt2xot472er6"]
+
+[ext_resource type="Texture2D" uid="uid://dlu86mtjuubdk" path="res://assets/ui/kenney 1bit/Tilemap/tilemap_black.png" id="1_d322o"]
+[ext_resource type="Script" path="res://ui/element/button_prompt.gd" id="2_lvoa6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_868r6"]
+atlas = ExtResource("1_d322o")
+region = Rect2(561, 323, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ohac"]
+atlas = ExtResource("1_d322o")
+region = Rect2(136, 34, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0cyr"]
+atlas = ExtResource("1_d322o")
+region = Rect2(153, 34, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gou3a"]
+atlas = ExtResource("1_d322o")
+region = Rect2(17, 289, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlvrj"]
+atlas = ExtResource("1_d322o")
+region = Rect2(136, 34, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl0dh"]
+atlas = ExtResource("1_d322o")
+region = Rect2(170, 34, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5siu5"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_868r6")
+}],
+"loop": false,
+"name": &"drag",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ohac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0cyr")
+}],
+"loop": true,
+"name": &"left_click",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gou3a")
+}],
+"loop": false,
+"name": &"point_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlvrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl0dh")
+}],
+"loop": true,
+"name": &"right_click",
+"speed": 2.0
+}]
+
+[node name="ButtonPrompt" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_5siu5")
+animation = &"left_click"
+script = ExtResource("2_lvoa6")

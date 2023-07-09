@@ -15,6 +15,7 @@ func _process(delta):
 		$AnimationPlayer.play("idle")
 		if (durability <= 0) : 
 			get_parent().queue_free()
+			AudioManager.play("break")
 			emit_signal('explore')
 	
 func read_json_file(file_path):

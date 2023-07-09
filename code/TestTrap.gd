@@ -14,6 +14,7 @@ func _process(delta):
 				var help = wall.instantiate()
 				help.global_position = Vector2(self.global_position.x, self.global_position.y - 30) 
 				get_parent().add_child(help)
+			AudioManager.play("place")
 		Global.current_item = '0'
 
 func _on_mouse_entered():

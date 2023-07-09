@@ -21,6 +21,7 @@ func _process(delta):
 					item.blank = false
 					break
 			queue_free()
+			AudioManager.play("break")
 
 func read_json_file(file_path):
 	var json_as_text = FileAccess.get_file_as_string(file_path)
