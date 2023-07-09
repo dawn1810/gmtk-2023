@@ -183,6 +183,7 @@ transform = Transform2D(1.99, 0, 0, 1.99, 0, 0)
 position = Vector2(200, 10)
 
 [node name="GameOver" parent="." instance=ExtResource("5_s1uc8")]
+visible = false
 
 [node name="Camera" parent="." instance=ExtResource("4_1fli5")]
 position = Vector2(576, 324)
@@ -379,7 +380,7 @@ texture = ExtResource("18_5m3oc")
 shape = SubResource("CircleShape2D_wg726")
 
 [node name="rock4" parent="." instance=ExtResource("9_4t2n5")]
-position = Vector2(2991, 544)
+position = Vector2(3109, 377)
 collision_mask = 15
 mass = 10.0
 
@@ -513,9 +514,34 @@ stream = ExtResource("20_ruqe7")
 bus = &"SFX"
 
 [node name="PopCat" parent="." instance=ExtResource("22_p2js0")]
-position = Vector2(12091, 463)
+position = Vector2(12106, 65)
 scale = Vector2(-1, 1)
 speed = 0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 344.0
+offset_top = 173.0
+offset_right = 601.0
+offset_bottom = 205.0
+theme = ExtResource("3_bbn3i")
+text = "Right click to destroy object"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 662.0
+offset_top = 453.0
+offset_right = 919.0
+offset_bottom = 485.0
+theme = ExtResource("3_bbn3i")
+text = "Left click to collect object"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 1252.0
+offset_top = 473.0
+offset_right = 1509.0
+offset_bottom = 505.0
+theme = ExtResource("3_bbn3i")
+text = "Drag item here to use it"
+horizontal_alignment = 1
 
 [connection signal="explore" from="Hourse/DestroyItem" to="." method="_on_destroy_item_explore"]
 [connection signal="dead_signal" from="Actor" to="." method="_on_actor_dead_signal"]
