@@ -14,6 +14,7 @@ func _process(delta):
 		durability -= 1
 		$AnimationPlayer.play("idle")
 		if (durability <= 0) : 
+			AudioManager.play("break")
 			if get_parent().name == 'Actor':
 				get_parent().dead()
 			else :
