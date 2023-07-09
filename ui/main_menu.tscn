@@ -110,9 +110,7 @@ Music and SFX:
 - Dova-s.jp
 - artisticdude
 
-
-
-[center]Thank you[/center]"
+[center]Thank you![/center]"
 
 [node name="CloseTxt" type="Label" parent="CreditMenu"]
 layout_mode = 0
