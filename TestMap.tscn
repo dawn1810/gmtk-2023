@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c227xqyrqnppw"]
+
+[ext_resource type="Script" path="res://screen/Floor/FloorGenerator.gd" id="1_uoxdo"]
+[ext_resource type="PackedScene" uid="uid://b5n3khfqdlb72" path="res://screen/Floor/dirt.tscn" id="2_40dkk"]
+
+[node name="TestMap" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="FloorGenerator" type="Node2D" parent="."]
+script = ExtResource("1_uoxdo")
+dirt_path = "res://screen/Floor/dirt.tscn"
+
+[node name="Dirt" parent="." instance=ExtResource("2_40dkk")]
