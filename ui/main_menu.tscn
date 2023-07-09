@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq58hwn83p6k5"]
+[gd_scene load_steps=4 format=3 uid="uid://cq58hwn83p6k5"]
 
 [ext_resource type="Theme" uid="uid://cje4s55txuuax" path="res://themes/gui_theme.tres" id="1_cwbmi"]
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_qrjmb"]
+[ext_resource type="Texture2D" uid="uid://bhfknoq3m5y6b" path="res://img/background.png" id="2_jityj"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_qrjmb")
 start_level = "res://screen/level_1.tscn"
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(675.198, 334.5)
+scale = Vector2(2.81124, 2.77083)
+texture = ExtResource("2_jityj")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
@@ -20,7 +26,10 @@ theme = ExtResource("1_cwbmi")
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "TEN GAME LEN TREN NAY"
+theme_override_font_sizes/font_size = 50
+text = "POPEGG"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -47,7 +56,8 @@ offset_right = 257.0
 offset_bottom = -14.0
 grow_vertical = 0
 theme = ExtResource("1_cwbmi")
-text = "An submission to GMTK 2023"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "A submission to GMTK 2023"
 
 [node name="CreditMenu" type="ColorRect" parent="."]
 visible = false
@@ -90,13 +100,17 @@ Made by:
 - ten2
 - ten 3
 - ten 4
-- sakojirose3 CUSTOM ART
+- ten 5 CUSTOM ART
 
 3rd-party assets used:
 - m3x6 font by Daniel Linssen
 - Cryo's Mini GUI by PaperHatLizard
 
-[center]Thank you[/center]"
+Music and SFX:
+- Dova-s.jp
+- artisticdude
+
+[center]Thank you![/center]"
 
 [node name="CloseTxt" type="Label" parent="CreditMenu"]
 layout_mode = 0
