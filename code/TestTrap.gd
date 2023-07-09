@@ -10,9 +10,9 @@ func _process(delta):
 #			await print(self.get_path())
 
 			print(Global.current_item)
-			if Global.current_item == 'haha':
+			if Global.current_item == 'wood':
 				var help = wall.instantiate()
-				help.global_position = self.global_position
+				help.global_position = Vector2(self.global_position.x, self.global_position.y - 30) 
 				get_parent().add_child(help)
 		Global.current_item = '0'
 

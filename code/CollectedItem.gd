@@ -17,6 +17,8 @@ func _process(delta):
 				var item = get_parent().get_node('FrontLayer/Inventory/Control/HBoxContainer/CenterContainer' + str(i+1) + '/Item')
 				if (item.blank):
 					item.texture_normal = load(read_json_file('res://code/item.json')[item_name])
+					item.item_name = self.item_name
+					item.blank = false
 					break
 			queue_free()
 
